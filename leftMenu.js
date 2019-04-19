@@ -1,27 +1,39 @@
 import React, { Component } from 'react';
+import uniqueid from 'uniqid'
 import './leftMenu.css';
+
+function ShowListItem(props){
+    console.log(props);
+    //let boundItemClick = this.onItemClick.bind(this,props.item);
+    return (
+        <li key={uniqueid()} data-id={props.item.index} onClick={props.onClick}>{props.item.name}</li>
+    );
+}
+
+function GetID(e) {
+    console.log(this);
+    console.log(e.target.id?e.target.id:e.target);
+ }
+
+ function handleClick(i, event) {
+    alert(i);
+}
+ 
 
 class LeftMenu extends Component {
     constructor(props){ 
         super(props);
     }
-
-    handleCheck(e) {
-        let selected = e.currentTarget.dataset.id;
-        console.log(selected);
-     }
-
+    handleClick(i, event){
+        alert(i);
+    }
     render() {
+        let items = this.props.menulist;
       return (
         <div className="leftMenu" >
          <ul>
-            <li onClick={this.handleCheck.bind(this)} data-id="1">Item 1</li>
-            <li onClick={this.handleCheck.bind(this)} data-id="2">Item 2</li>
-            <li onClick={this.handleCheck.bind(this)} data-id="3">Item 3</li>
-            <li onClick={this.handleCheck.bind(this)} data-id="4">Item 4</li>
-            <li onClick={this.handleCheck.bind(this)} data-id="5">Item 5</li>
-            <li onClick={this.handleCheck.bind(this)} data-id="6">Item 6</li>
-            <li onClick={this.handleCheck.bind(this)} data-id="7">Item 7</li>
+            
+{items.map(item => <li key={uniqueid()} data-id={item.id} onClick={this.handleClick.bind(this,item.id)}>{item.name}</li>)}
         </ul>
         </div>
       );
