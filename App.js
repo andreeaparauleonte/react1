@@ -5,18 +5,7 @@ import './App.css';
 class App extends Component {
   constructor(props, context){
     super(props);
-    console.log("in app safter super");
-    console.log(this);
-    console.log(props);
-    this.onItemClickHandler = this.onItemClickHandler.bind(this);
-
   }
-
-  onItemClickHandler(event){
-    console.log("test click");
-    console.log(event.target);
-  }
-
 
   render() {
     return (
