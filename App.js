@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
-import LeftMenu from './leftMenu';
+import ListView from './ListView';
 import './App.css';
 
 class App extends Component {
-  constructor(props, context){
+  constructor(props){
     super(props);
   }
 
+  Header(){
+    return (
+      <header className="App-header">         
+          <p>
+            {this.props.titleheader}
+          </p>
+        </header>
+    );
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">         
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-        </header>
-        <div id="AppLeft"></div>
-        <LeftMenu menulist={this.props.menulist}/>
+        {this.Header()}
+        <ListView list={this.props.list}/>
       </div>
     );
   }

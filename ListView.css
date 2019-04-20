@@ -1,0 +1,19 @@
+.container{
+    float: left;
+    width: 100%;
+    position: relative;
+    border: 2px solid gray;
+}
+.leftMenu{
+    width:30%;
+    float: left;   
+}
+.leftMenu > div{
+    border-right: 2px solid grey;
+    padding:20px;
+}
+.details{
+    width:70%;
+    float: left;
+    position: relative;
+}

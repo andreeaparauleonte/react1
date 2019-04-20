@@ -1,0 +1,13 @@
+ul {
+    text-align: left;
+    list-style: decimal;
+}
+ul li{
+    cursor: pointer;
+}
+ul li:hover{
+    color:darkslategrey;
+}
+.green{
+    color:green;
+}
